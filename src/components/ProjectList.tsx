@@ -1,4 +1,5 @@
 import '../styles/components/Header.css'
+import ProjectCard from "./ProjectCard";
 
 const projectList = [
     {
@@ -23,10 +24,9 @@ function ProjectList() {
     return (
         <ul>
             {projectList.map((project, index) => (
-                <li key={`${project.name}-${index}`}>
-                    {project.name}
-                    { project.isInsane && <span>🔥</span> }
-                </li>
+                <ProjectCard key={`${project.name}-${index}`} project={project} yhea={project.isInsane}>
+                    🔥
+                </ProjectCard>
             ))}
         </ul>
     )
