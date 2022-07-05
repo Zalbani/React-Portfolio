@@ -3,11 +3,15 @@ import React from "react";
 
 function ProjectCard({ project, yhea, children }: { project: Project; yhea: Boolean; children: React.ReactNode } ) {
     return (
-        <li>
+        <li onClick={() => handleClick(project.name)}>
             {project.name}
             { yhea && <span>{ children }</span> }
         </li>
     )
+}
+
+function handleClick(projectName: String) {
+    console.log(`Super ${projectName}`)
 }
 
 export default ProjectCard
