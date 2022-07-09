@@ -1,6 +1,13 @@
+import { Link } from 'react-router-dom'
 import '../styles/components/Header.css'
+
 function Header() {
-    return <h1 className="text-3xl font-bold underline">My first comp'</h1>
+    return (
+        <nav>
+            <Link to="/"> Accueil </Link>
+            <Link to="/projects/42"> Projets </Link>
+        </nav>
+    )
 }
 
 export default Header
