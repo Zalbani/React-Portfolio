@@ -1,5 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.svg'
+
+import 'normalize.css'
 import '../styles/App.css'
 
 import ProjectList from '../components/ProjectList'
