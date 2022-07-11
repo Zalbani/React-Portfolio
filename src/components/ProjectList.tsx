@@ -1,30 +1,42 @@
 import '../styles/components/Header.css'
-import ProjectCard from "./ProjectCard";
+import ProjectCard from './ProjectCard'
 
-const projectList = [
-    {
-        name: 'agenda',
-        isInsane: true
-    },
-    {
-        name: 'open',
-        isInsane: false
-    },
-    {
-        name: 'treat',
-        isInsane: false
-    },
-    {
-        name: 'yhea',
-        isInsane: true
-    }
-]
+import { Loader } from './utils/Loader'
+import { Project } from '../interfaces/Project'
+
+import { useEffect, useState } from 'react'
 
 function ProjectList() {
+    const [projects, setProjects] = useState<Array<Project>>([])
+    const [isDataLoading, setIsDataLoading] = useState<Boolean>(false)
+
+    useEffect(() => {
+        async function fetchProjects() {
+            setIsDataLoading(true)
+            try {
+                const response = await fetch(`/api/projects`)
+                const projects = await response.json()
+                setProjects(projects)
+            } catch (err) {
+                console.log(err)
+            } finally {
+                setIsDataLoading(false)
+            }
+        }
+        fetchProjects()
+    }, [])
+
+    if (isDataLoading) {
+        return <Loader />
+    }
     return (
         <ul>
-            {projectList.map((project, index) => (
-                <ProjectCard key={`${project.name}-${index}`} project={project} yhea={project.isInsane}>
+            {projects.map((project, index) => (
+                <ProjectCard
+                    key={`${project.name}-${index}`}
+                    project={project}
+                    yhea={project.isInsane}
+                >
                     🔥
                 </ProjectCard>
             ))}
