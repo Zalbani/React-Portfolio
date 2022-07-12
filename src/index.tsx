@@ -6,10 +6,10 @@ import Home from './pages/Home'
 import Project from './pages/Project'
 import Error from './pages/Error'
 
-import { ThemeProvider } from './components/utils/context'
+import { ThemeProvider } from './context'
 
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './layouts/Header'
+import Footer from './layouts/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(

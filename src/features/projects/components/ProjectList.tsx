@@ -1,7 +1,6 @@
-import '../styles/components/Header.css'
 import ProjectCard from './ProjectCard'
 
-import { Loader } from './utils/Loader'
+import { Loader } from '../../../components/ui/Loader'
 import { Project } from '../interfaces/Project'
 
 import { useEffect, useState } from 'react'
