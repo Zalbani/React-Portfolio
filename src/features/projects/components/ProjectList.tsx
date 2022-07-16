@@ -1,6 +1,5 @@
 import ProjectCard from './ProjectCard'
 
-import { Loader } from '../../../components/ui/Loader'
 import { Project } from '../interfaces/Project'
 
 import { useEffect, useState } from 'react'
@@ -26,7 +25,7 @@ function ProjectList() {
     }, [])
 
     if (isDataLoading) {
-        return <Loader />
+        return <p> Loading...</p>
     }
     return (
         <ul>

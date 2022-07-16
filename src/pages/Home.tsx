@@ -7,7 +7,8 @@ import ProjectList from '../features/projects/components/ProjectList'
 
 function Home() {
     return (
-        <div className="App">
+        <div className="App flex items-center justify-center min-h-screen dark:bg-black transition duration-500">
+            <h1 className="text-blue-600 dark:text-white">Hello title</h1>
             <header className="App-header">
                 <ProjectList />
                 <img src={logo} className="App-logo" alt="logo" />
@@ -23,7 +24,6 @@ function Home() {
                     Learn React app
                 </a>
             </header>
-            <h2>test</h2>
         </div>
     )
 }
